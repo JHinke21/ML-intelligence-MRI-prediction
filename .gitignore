@@ -1,0 +1,89 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*-checkpoint.ipynb
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Data files (exclude raw data from repo)
+data/data.csv
+data/holdout.csv
+data/fake_holdout.csv
+data/fake_predictions.csv
+
+# Course materials and assignment files
+**/6PASNMLN*.docx
+**/6PASNMLN*.pdf
+**/*Marking Criteria*.docx
+**/*Summative Assessment*.docx
+**/*Assessment*.pptx
+**/2023-2024*.pdf
+
+# Personal documents
+**/*coversheet*.docx
+**/*Coversheet*.docx
+**/*script*.docx
+**/notes*.docx
+**/*fromative*.docx
+**/*Fromative*.pptx
+
+# Temporary files
+~$*.docx
+~$*.pptx
+*.tmp
+
+# Video files (too large for git)
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Backup files
+backup_*.py
+*_backup.py
+
+# Output logs
+Claude_Terminal*.txt
+**/output*.txt
+
+# Claude Code settings
+.claude/
+
+# Keep only specific data structure
+!data/.gitkeep
