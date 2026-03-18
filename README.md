@@ -1,6 +1,6 @@
 # Predicting Intelligence from Structural MRI Data                                                                                        
 
-**Author:** K22016090; Johanna Hinke
+**Author:** Johanna Hinke
 
 **Course:** 6PASNMLN - Machine Learning in Neuroscience
 
@@ -12,19 +12,19 @@
 
 **Can static brain structure predict cognitive performance?**
 
-This project explores whether structural MRI features can predict intelligence scores using machine learning techniques. Despite the theoretical foundation that brain structure relates to cognitive function, prediction remains challenging due to weak effect sizes, high dimensionality, and multicollinearity inherent in neuroimaging data. The data was trained on noisy data provided by module leaders and was personally tested on fake holdout data. 
+This project explores whether structural MRI features can predict intelligence scores using machine learning techniques. Answering this question has implications for understanding the neurobiological basis of intelligence and the limits of structural biomarkers in cognitive prediction. Despite the theoretical foundation that brain structure relates to cognitive function, prediction remains challenging due to weak effect sizes, high dimensionality, and multicollinearity inherent in neuroimaging data.
 
 ## Project Overview
 
 ### Dataset:
 - **Participants:** 740 healthy individuals
-- **Features:** 116 MRI-derived structural brain features (cortical thickness, brain volumens, regional metrices)
+- **Features:** 116 MRI-derived structural brain features (cortical thickness, brain volumes, regional metrics)
 - **Target Variable:** IST Intelligence Total Score
 - **Data Split:** 80% training (592 participants), 20% testing (148 participants)
 
 ### Key Findings
 - **Optimal Model:** ElasticNet + PCA (n_components=5, alpha=10, l1_ratio=0.7)
-- **Cross-Vaidation Performance:** R² = 0.0236 (p = 0.0099, statistically significant)
+- **Cross-Validation Performance:** R² = 0.0236 (p = 0.0099, statistically significant)
 - **Test Set Performance:** R² = 0.0822, MAE = 31 points
 - **Interpretation:** Static brain structure alone explains only ~8% of intelligence variance, suggesting dynamic brain activity and environmental factors play larger roles.
 
@@ -54,7 +54,7 @@ mln-intelligence-prediction/
 - **Final Feature Count:** 109 predictive features
 - **Data Quality:** No missing values detected; 2 outliers identified (|z| > 3) but retained
 
-### 2. Model Selection Strateg
+### 2. Model Selection Strategy
 Following the **No Free Lunch Theorem** (Wolpert & Macready, 1997) which states that no single algorithm works best for all problems, I systematically compared four model families using **5-fold cross-validation** with **GridSearchCV** for hyperparameter optimization:
 
 #### Model Families Explored:
@@ -119,7 +119,7 @@ Both models achieved **statistically significant** predictive performance (p < 0
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/yourusername/mln-intelligence-prediction.git
+git clone https://github.com/JHinke21/ML-intelligence-MRI-prediction
 cd mln-intelligence-prediction
 ```
 
@@ -156,13 +156,20 @@ jupyter notebook notebooks/k22016090_explorationdata.ipynb
 - `k22016090_exploratory.ipynb`: Additional exploratory work
 
 
-## References
-1. **Wolpert, D. H., & Macready, W. G. (1997).** No free lunch theorems for optimization. *IEEE Transactions on Evolutionary Computation*, 1(1), 67-82.
-2. **Lee, H., et al. (2024).** Cortical metrics predict intelligence: A structural MRI study. *NeuroImage*, [citation details].
-3. **Vieira, B. H., et al. (2022).** On the prediction of human intelligence from neuroimaging: A systematic review. *Neuroscience & Biobehavioral Reviews*, 140, 104795.
-4. **Greene, A. S., Gao, S., Scheinost, D., & Constable, R. T. (2018).** Task-induced brain state manipulation improves prediction of individual traits. *Nature Communications*, 9(1), 2807.
-5. **Rasero, J., et al. (2021).** Integrating across neuroimaging modalities boosts prediction accuracy of cognitive ability. *Proceedings of the National Academy of Sciences*, 118(49), e2108556118.
-6. **Hastie, T., Tibshirani, R., & Friedman, J. (2009).** *The Elements of Statistical Learning: Data Mining, Inference, and Prediction* (2nd ed.). Springer.
+## Project References
+1. “A Tutorial on Support Vector Regression” Alex J. Smola, Bernhard Schölkopf - Statistics and Computing archive Volume 14 Issue 3, August 2004, p. 199-222.
+2. Fernández-Blázquez, M.A., Ruiz-Sánchez de León, J.M., Sanz-Blasco, R. et al. XGBoost models based on non imaging features for the prediction of mild cognitive impairment in older adults. Sci Rep 15, 29732 (2025). https://doi.org/10.1038/s41598-025-14832-0
+3. Greene, A.S., Gao, S., Scheinost, D. et al. Task-induced brain state manipulation improves prediction of individual traits. Nat Commun 9, 2807 (2018). https://doi.org/10.1038/s41467-018-04920-3
+4. Hastie, T., Tibshirani, R., & Friedman, J. (2009). The Elements of Statistical Learning: Data Mining, Inference, and Prediction (2nd ed.). Springer.
+5. Hussain, M. A., Grant, P. E., & Ou, Y. (2024). Inferring neurocognition using artificial intelligence on Brain Mris. Frontiers in Neuroimaging, 3. https://doi.org/10.3389/fnimg.2024.1455436 
+6. Lewis, J. D., Imani, V., & Tohka, J. (2024). Intelligence and cortical morphometry: Caveats in brain-behavior associations. Brain Structure and Function, 229(6), 1417–1432. https://doi.org/10.1007/s00429-024-02792-6 
+7. Mwangi, B., Tian, T. S., & Soares, J. C. (2013). A review of feature reduction techniques in neuroimaging. Neuroinformatics, 12(2), 229–244. https://doi.org/10.1007/s12021-013-9204-3 
+8. “Neighbourhood Components Analysis”, J. Goldberger, S. Roweis, G. Hinton, R. Salakhutdinov, Advances in Neural Information Processing Systems, Vol. 17, May 2005, pp. 513-520.Sarica et al., 2017
+9. Rasero, J., Sentis, A. I., Yeh, F.-C., & Verstynen, T. (2021). Integrating across neuroimaging modalities boosts prediction accuracy of cognitive ability. PLOS Computational Biology, 17(3). https://doi.org/10.1371/journal.pcbi.1008347 
+10. Sarica, A., Cerasa, A., & Quattrone, A. (2017). Random Forest algorithm for the classification of neuroimaging data in alzheimer’s disease: A systematic review. Frontiers in Aging Neuroscience, 9. https://doi.org/10.3389/fnagi.2017.00329 
+11. Sui, J., Jiang, R., Bustillo, J., & Calhoun, V. (2020). Neuroimaging-based individualized prediction of cognition and behavior for Mental Disorders and Health: Methods and promises. Biological Psychiatry, 88(11), 818–828. https://doi.org/10.1016/j.biopsych.2020.02.016 
+12. Vieira, B. H., Pamplona, G. S., Fachinello, K., Silva, A. K., Foss, M. P., & Salmon, C. E. (2022). On the prediction of human intelligence from neuroimaging: A systematic review of methods and reporting. Intelligence, 93, 101654. https://doi.org/10.1016/j.intell.2022.101654 
+13. Wolpert, D. H., & Macready, W. G. (1997). No free lunch theorems for optimization. IEEE Transactions on Evolutionary Computation, 1(1), 67–82. https://doi.org/10.1109/4235.585893 
 
 ## License
-This project is part of academic coursework for 6PASNMLN Machine Learning in Neuroscience at King's College London. Please contact the author for usage permissions.     
+Academic project — contact author for usage permissions. 
